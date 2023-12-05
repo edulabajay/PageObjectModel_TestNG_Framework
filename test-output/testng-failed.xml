@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.testcase_pom.HomepageTest_pom">
+        <methods>
+          <include name="verifyContacts_link"/>
+          <include name="Homepage_title"/>
+          <include name="steup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.testcase_pom.HomepageTest_pom -->
+      <class name="com.testcase_pom.Add_New_ContactTest_pom">
+        <methods>
+          <include name="teardown"/>
+          <include name="validate_new_contact"/>
+          <include name="steup"/>
+        </methods>
+      </class> <!-- com.testcase_pom.Add_New_ContactTest_pom -->
+      <class name="com.testcase_pom.LoginpageTest_pom">
+        <methods>
+          <include name="tear"/>
+          <include name="validate_loginpage"/>
+          <include name="steup"/>
+          <include name="validate_loginpage_titletest"/>
+        </methods>
+      </class> <!-- com.testcase_pom.LoginpageTest_pom -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
