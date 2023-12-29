@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -22,7 +22,9 @@ public class Basepage_pom {
 	public static EventFiringWebDriver e_driver;
 	public static WebEventListener eventListener;
 
-
+	
+	//Logger
+	Logger log = Logger.getLogger(Basepage_pom.class);
 
 	//Super class Constructor
 	public Basepage_pom() {
