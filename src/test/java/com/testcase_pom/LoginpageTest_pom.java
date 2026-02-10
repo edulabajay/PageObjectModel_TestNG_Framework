@@ -1,23 +1,20 @@
 package com.testcase_pom;
 
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.qa.base.Basepage_pom;
-import com.qa.pages_pom.Homepage_pom;
+import com.qa.pages_pom.Student_dashboard;
 import com.qa.pages_pom.LoginPage_pom;
 import com.utils_pom.UtilsTest;
 
 public class LoginpageTest_pom extends Basepage_pom {
 
 	//Creating Object reference variable
-	LoginPage_pom loginpage;
-	Homepage_pom homepage;
+
+	Student_dashboard dashboard;
 	UtilsTest utilspage;
-
-
+	LoginPage_pom loginpage;
 
 
 
@@ -25,34 +22,39 @@ public class LoginpageTest_pom extends Basepage_pom {
 
 		//Invoke superclass constructor from basepage_pom
 		super();
+		
+		/***Test cases should be independent with each other
+		 *Before each test case-- Launch the browser and login
+		 *After each test case-- close the browser */	
 	}
 	
-	/*Test cases should be independent with each other
-	 *Before each test case-- Launch the browser and login
-	 *After each test case-- close the browser
-	 * 
-	 * 
-	 */
-
 	@BeforeMethod
-	public void steup() {
+	public void SetUP() {
 
 		initialize();
 		loginpage = new LoginPage_pom();
 		utilspage = new UtilsTest();
+		
 	}
+
 
 	@Test(priority=1)
-	public void validate_loginpage_titletest() {
-		String title=loginpage.ValidateLoginPageTitle();
-		Assert.assertEquals(title, "Cogmento CRM");
+	public void loginTest() {
+		dashboard = loginpage.login(prop.getProperty("user_name"),prop.getProperty("user_pass"));
+		
+		System.out.println("After login URL: " + driver.getCurrentUrl());
+		System.out.println("After login Title: " + driver.getTitle());
 
-	}
-	@Test(priority=2)
-	public void validate_loginpage() {
-		homepage=loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
+		
+		
+		//loginpage.enter_email("ajay@edulab.in");
+		//loginpage.enter_password("123456");
+		//loginpage.login_btn();
 
+		
 	}
+	
+	
 
 
 	@AfterMethod
@@ -61,3 +63,27 @@ public class LoginpageTest_pom extends Basepage_pom {
 	}
 
 }
+
+
+/***
+
+//test cases should be separated -- independent with each other
+//before each test case -- launch the browser and login
+//test -- execute test case
+//after each test case -- close the browser
+
+
+@BeforeMethod
+Launch Browser → Login
+   ↓
+@Test
+Execute Test Steps
+   ↓
+@AfterMethod
+Close Browser
+
+
+
+
+
+*/

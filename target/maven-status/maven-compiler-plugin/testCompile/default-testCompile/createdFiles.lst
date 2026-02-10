@@ -1,3 +1,4 @@
-com\testcase_pom\HomepageTest_pom.class
+com\testcase_pom\Student_application_test.class
 com\testcase_pom\LoginpageTest_pom.class
-com\testcase_pom\Add_New_ContactTest_pom.class
+com\ExtentReportListener\ExtentReportListernerNG.class
+com\testcase_pom\Student_Dashboard_page_test.class

@@ -1,37 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-05T17:36:49 IST" name="Default suite" finished-at="2023-12-05T17:37:01 IST" duration-ms="11797">
+  <suite started-at="2026-01-21T11:27:48 IST" name="Suite" finished-at="2026-01-21T11:28:32 IST" duration-ms="44213">
     <groups>
     </groups>
-    <test started-at="2023-12-05T17:36:49 IST" name="Default test" finished-at="2023-12-05T17:37:01 IST" duration-ms="11797">
+    <test started-at="2026-01-21T11:27:48 IST" name="Test" finished-at="2026-01-21T11:28:32 IST" duration-ms="44213">
       <class name="com.testcase_pom.LoginpageTest_pom">
-        <test-method is-config="true" signature="steup()[pri:0, instance:com.testcase_pom.LoginpageTest_pom@533bda92]" started-at="2023-12-05T17:36:49 IST" name="steup" finished-at="2023-12-05T17:36:55 IST" duration-ms="6188" status="PASS">
+        <test-method is-config="true" signature="SetUP()[pri:0, instance:com.testcase_pom.LoginpageTest_pom@1c9b0314]" started-at="2026-01-21T11:27:48 IST" name="SetUP" finished-at="2026-01-21T11:27:54 IST" duration-ms="6513" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- steup -->
-        <test-method signature="validate_loginpage_titletest()[pri:1, instance:com.testcase_pom.LoginpageTest_pom@533bda92]" started-at="2023-12-05T17:36:55 IST" name="validate_loginpage_titletest" finished-at="2023-12-05T17:36:55 IST" duration-ms="14" status="PASS">
+        </test-method> <!-- SetUP -->
+        <test-method signature="loginTest()[pri:1, instance:com.testcase_pom.LoginpageTest_pom@1c9b0314]" started-at="2026-01-21T11:27:54 IST" name="loginTest" finished-at="2026-01-21T11:27:56 IST" duration-ms="2045" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validate_loginpage_titletest -->
-        <test-method is-config="true" signature="tear()[pri:0, instance:com.testcase_pom.LoginpageTest_pom@533bda92]" started-at="2023-12-05T17:36:55 IST" name="tear" finished-at="2023-12-05T17:36:55 IST" duration-ms="170" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tear -->
-        <test-method is-config="true" signature="steup()[pri:0, instance:com.testcase_pom.LoginpageTest_pom@533bda92]" started-at="2023-12-05T17:36:55 IST" name="steup" finished-at="2023-12-05T17:37:00 IST" duration-ms="4978" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- steup -->
-        <test-method signature="validate_loginpage()[pri:2, instance:com.testcase_pom.LoginpageTest_pom@533bda92]" started-at="2023-12-05T17:37:00 IST" name="validate_loginpage" finished-at="2023-12-05T17:37:01 IST" duration-ms="269" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validate_loginpage -->
-        <test-method is-config="true" signature="tear()[pri:0, instance:com.testcase_pom.LoginpageTest_pom@533bda92]" started-at="2023-12-05T17:37:01 IST" name="tear" finished-at="2023-12-05T17:37:01 IST" duration-ms="147" status="PASS">
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="tear()[pri:0, instance:com.testcase_pom.LoginpageTest_pom@1c9b0314]" started-at="2026-01-21T11:27:56 IST" name="tear" finished-at="2026-01-21T11:27:57 IST" duration-ms="704" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tear -->
       </class> <!-- com.testcase_pom.LoginpageTest_pom -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.testcase_pom.Student_application_test">
+        <test-method is-config="true" signature="steup()[pri:0, instance:com.testcase_pom.Student_application_test@61710c6]" started-at="2026-01-21T11:28:04 IST" name="steup" finished-at="2026-01-21T11:28:13 IST" duration-ms="8474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- steup -->
+        <test-method signature="validate_new_application_details()[pri:1, instance:com.testcase_pom.Student_application_test@61710c6]" started-at="2026-01-21T11:28:13 IST" name="validate_new_application_details" finished-at="2026-01-21T11:28:32 IST" duration-ms="19058" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_new_application_details -->
+      </class> <!-- com.testcase_pom.Student_application_test -->
+      <class name="com.testcase_pom.Student_Dashboard_page_test">
+        <test-method is-config="true" signature="steup()[pri:0, instance:com.testcase_pom.Student_Dashboard_page_test@4b8729ff]" started-at="2026-01-21T11:27:57 IST" name="steup" finished-at="2026-01-21T11:28:03 IST" duration-ms="5863" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- steup -->
+        <test-method signature="click_new_application_button_test()[pri:1, instance:com.testcase_pom.Student_Dashboard_page_test@4b8729ff]" started-at="2026-01-21T11:28:03 IST" name="click_new_application_button_test" finished-at="2026-01-21T11:28:03 IST" duration-ms="537" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- click_new_application_button_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.testcase_pom.Student_Dashboard_page_test@4b8729ff]" started-at="2026-01-21T11:28:03 IST" name="teardown" finished-at="2026-01-21T11:28:04 IST" duration-ms="925" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.testcase_pom.Student_Dashboard_page_test -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -3,29 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.testcase_pom.HomepageTest_pom">
+      <class name="com.testcase_pom.Student_application_test">
         <methods>
-          <include name="verifyContacts_link"/>
-          <include name="Homepage_title"/>
-          <include name="steup"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.testcase_pom.HomepageTest_pom -->
-      <class name="com.testcase_pom.Add_New_ContactTest_pom">
-        <methods>
-          <include name="teardown"/>
-          <include name="validate_new_contact"/>
+          <include name="validate_new_application_details"/>
           <include name="steup"/>
         </methods>
-      </class> <!-- com.testcase_pom.Add_New_ContactTest_pom -->
-      <class name="com.testcase_pom.LoginpageTest_pom">
-        <methods>
-          <include name="tear"/>
-          <include name="validate_loginpage"/>
-          <include name="steup"/>
-          <include name="validate_loginpage_titletest"/>
-        </methods>
-      </class> <!-- com.testcase_pom.LoginpageTest_pom -->
+      </class> <!-- com.testcase_pom.Student_application_test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

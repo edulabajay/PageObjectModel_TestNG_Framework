@@ -1,42 +1,36 @@
 package com.qa.base;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.utils_pom.UtilsTest;
-import com.utils_pom.WebEventListener;
+
 
 
 public class Basepage_pom {
 
+
 	public static WebDriver driver;
 	public static Properties prop;
-	public static EventFiringWebDriver e_driver;
-	public static WebEventListener eventListener;
 
-	
-	//Logger
-	Logger log = Logger.getLogger(Basepage_pom.class);
+
+
 
 	//Super class Constructor
-	public Basepage_pom() {
+	public Basepage_pom() {    //ConfigReader
 
 		try {
 
 			prop = new Properties();
-			FileInputStream ip=new FileInputStream("C:\\Users\\info\\eclipse-workspace\\Framework_Structure\\src\\main\\java\\com\\config\\config.properties");
+			FileInputStream ip=new FileInputStream("C:\\Users\\info\\eclipse-workspace\\Framework_Structure_POM_Maven_TestNG Suite\\src\\main\\java\\com\\config\\config.properties");
 			prop.load(ip);	
-
-		}catch (FileNotFoundException e) {
-
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -44,34 +38,42 @@ public class Basepage_pom {
 		}
 	}
 
-	//Invoke browser
+
+	// Initializing / Invoke browser
 	public static void initialize() {
 
-		String browserName = prop.getProperty("browser");
-		if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-			driver = new ChromeDriver();
-		}
+		 // 1) ChromeOptions
+        ChromeOptions options = new ChromeOptions();
 
-		//Listener
-		e_driver = new EventFiringWebDriver(driver);
-		eventListener = new WebEventListener();
-		e_driver.register(eventListener);
-		driver = e_driver;
+        // 2) Password manager complete OFF
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        prefs.put("password_manager_enabled", false);
+        options.setExperimentalOption("prefs", prefs);
 
+        // 3) (OPTIONAL) Notifications बंद
+        options.addArguments("--disable-notifications");
 
+        // 4) (OPTIONAL) direct incognito मधे run
+        //  incognito मध्ये password save होतच नाही
+        options.addArguments("--incognito");
 
-		//Waits
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(UtilsTest.Page_LOAD_TIMEOUTS, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(UtilsTest.Page_LOAD_TIMEOUTS, TimeUnit.SECONDS);
+        // 5) MUST: driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
 
+        // 6) बाकी तुझे existing settings
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().pageLoadTimeout(UtilsTest.Page_LOAD_TIMEOUTS, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(UtilsTest.IMPLICIT_WAITS, TimeUnit.SECONDS);
 
-		driver.get(prop.getProperty("url"));
+        driver.get(prop.getProperty("url"));
+    }
+
 	}
 
-}
+
 
 
 /*All In Short

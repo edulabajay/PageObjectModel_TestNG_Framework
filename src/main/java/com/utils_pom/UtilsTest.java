@@ -20,11 +20,11 @@ import com.qa.base.Basepage_pom;
 public class UtilsTest extends Basepage_pom{
 
 	
-public static long Page_LOAD_TIMEOUTS= 250;
-public static long IMPLICIT_WAITS = 100;
+public static long Page_LOAD_TIMEOUTS = 100;
+public static long IMPLICIT_WAITS = 50;
+public static String excelPath;
 
-
-public static String TESTDATA_SHEET_PATH = "C:\\Users\\info\\eclipse-workspace\\Framework_Structure\\src\\main\\java\\com\\TestData\\TestData.xlsx";
+public static String TESTDATA_SHEET_PATH = excelPath;
 static Workbook book;
 static Sheet sheet;
 static JavascriptExecutor js;
